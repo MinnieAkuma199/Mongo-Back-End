@@ -1,0 +1,26 @@
+{
+  "name": "mongo-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node utils/seed.js",
+    "heroku-postbuild": "node utils/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinnieAkuma199/Mongo-Back-End.git"
+  },
+  "keywords": ["mongo-back-end"],
+  "author": "Kristyn Del Campo-Banrevy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MinnieAkuma199/Mongo-Back-End/issues"
+  },
+  "homepage": "https://github.com/MinnieAkuma199/Mongo-Back-End#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.4.2"
+  }
+}
