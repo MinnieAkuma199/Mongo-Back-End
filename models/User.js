@@ -34,6 +34,14 @@ userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
 
-const User = model("user", userSchema);
+const User = model("User", userSchema);
+//create a new user? --do i put in here or in insomnia
+// User.create(
+//   {
+//     username: "kristynd",
+//     email: "kristyndcb@gmail.com",
+//   },
+//   (err) => (err ? handleError(err) : console.log("New User has been created!"))
+// );
 
 module.exports = User;
