@@ -52,7 +52,6 @@ module.exports = {
   // FRIENDS
   //add
   addFriend(req, res) {
-    // console.log("A friend has been added");
     User.findOneAndUpdate(
       { _id: req.params.userId },
       { $addToSet: { friends: req.params.friendId } },
@@ -67,7 +66,6 @@ module.exports = {
   },
   //delete
   deleteFriend(req, res) {
-    // console.log("Friend has been deleted!");
     User.findOneAndUpdate(
       { _id: req.params.userId },
       { $pull: { friends: req.params.friendId } },
