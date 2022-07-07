@@ -7,7 +7,7 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       required: true,
-      match: "/^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/",
+      match: /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/,
     },
     thoughts: [
       {
@@ -35,13 +35,18 @@ userSchema.virtual("friendCount").get(function () {
 });
 
 const User = model("User", userSchema);
-//create a new user? --do i put in here or in insomnia
-// User.create(
-//   {
-//     username: "kristynd",
-//     email: "kristyndcb@gmail.com",
-//   },
-//   (err) => (err ? handleError(err) : console.log("New User has been created!"))
-// );
+User.findOne({}).then((data) => {
+  //if there is no user then create user
+  if (!data) {
+    User.create(
+      {
+        username: "kristynd",
+        email: "kristyndcb@gmail.com",
+      },
+      (err) =>
+        err ? console.log(err) : console.log("New User has been created!")
+    );
+  }
+});
 
 module.exports = User;

@@ -26,6 +26,7 @@ module.exports = {
       .then((thought) => {
         return User.findOneAndUpdate(
           {
+            //userId is what you put into insomnia
             _id: req.body.userId,
           },
           { $addToSet: { thoughts: thought._id } },
@@ -34,8 +35,7 @@ module.exports = {
       })
       .then((user) =>
         !user
-          ? //will the thought be created here even if the id is not found? find out on compass!
-            res.status(404).json({
+          ? res.status(404).json({
               message: "No user found with this Id",
             })
           : res.json("Thought has been created!")
@@ -47,4 +47,4 @@ module.exports = {
   },
 };
 
-//need to update a thought by _id and delete a thougth by _id!!
+//need to update a thought by _id and delete a thougth by _id!! createReaction and deleteReaction

@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const reactionSchema = require("./Reaction.js");
 
 const thoughtSchema = new Schema(
   {
@@ -13,11 +14,9 @@ const thoughtSchema = new Schema(
       default: Date.now,
     },
     username: {
-      // [{ type: Schema.Types.ObjectId, ref: "User" }], do i use this one or the one below like it is in the readme?
       type: String,
       required: true,
     },
-    //do i need to require in Reaction model bc of this?? or can i do this just like this??
     reactions: [reactionSchema],
   },
   {
