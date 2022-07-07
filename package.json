@@ -1,7 +1,7 @@
 {
   "name": "mongo-back-end",
   "version": "1.0.0",
-  "description": "",
+  "description": "social media app with mongoDB",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
